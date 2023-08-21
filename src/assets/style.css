@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+  --primary: #00adb5;
+  --primary-darker: color-mix(in srgb, var(--primary), #000 10%);
+  --off-white: #eeeeee;
+  --gray: #393e46;
+  --gray-darker: #222831;
+	--secondary: #f42750;
+	--secondary-darker: color-mix(in srgb, var(--secondary), #000 10%);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0;
+}
+
+body {
+  background-color: var(--off-white);
+  height: 100vh;
+}
+
+button {
+	background-color: var(--primary);
+	padding: 0 20px;
+	height: 40px;
+	font-size: 16px;
+	border: none;
+	border-radius: 5px;
+	color: white;
+}
+
+button:hover {
+	background-color: var(--primary-darker);
+}
+
+.buttons {
+	display: flex;
+	gap: 10px;
+}
+
+.secondary-button {
+	background-color: var(--off-white);
+	color: gray;
+	border: 2px solid lightgray;
+}
+
+.secondary-button:hover {
+	background-color: lightgray;
+}
+
+.delete-button {
+	background-color: var(--secondary);
+	color: white;
+}
+
+.delete-button:hover {
+	background-color: var(--secondary-darker);
+}
+
+button.password-visibility {
+	width: 50px;
+	padding: 0;
+}
+
+.app {
+  display: flex;
+}
+
+.side-bar {
+  position: fixed;
+  width: 250px;
+  height: 100%;
+  background-color: var(--gray-darker);
+}
+
+.side-bar h1 {
+  text-align: center;
+  margin: 10px;
+  color: white;
+	font-weight: 700;
+}
+
+.side-bar hr {
+  margin: 0 10px;
+  border: none;
+  height: 2px;
+  background-color: var(--gray);
+}
+
+.side-bar nav {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0;
+}
+
+.side-bar nav a {
+  display: flex;
+  align-items: center;
+	justify-content: space-between;
+  height: 60px;
+  padding: 0 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.side-bar nav a:hover {
+  background-color: var(--gray);
+}
+
+.side-bar nav a.active {
+	background-color: var(--primary);
+}
+
+.side-bar nav a.active:hover {
+	background-color: var(--primary-darker);
+}
+
+.side-bar code {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 20px 0;
+  color: var(--gray);
+  text-align: center;
+  font-family: "Cascadia Code";
+  font-size: 16px;
+}
+
+.content {
+  margin-left: 250px;
+	padding: 30px;
+	height: 100%;
+	width: 100%;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+}
+
+.form-container {
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	margin: 40px auto;
+	gap: 50px;
+}
+
+.form-field {
+	display: flex;
+	flex-direction: column;
+}
+
+.form-field label {
+	font-weight: 700;
+}
+
+.form-field label span {
+	color: var(--secondary);
+}
+
+.form-field input, select, .datepicker, textarea {
+	height: 40px;
+	padding: 0 10px;
+	border: 2px solid lightgray;
+	border-radius: 5px;
+	outline: none;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.form-field textarea {
+	resize: vertical;
+	height: 80px;
+	max-height: 300px;
+	min-height: 80px;
+	padding: 10px;
+}
+
+.form-field input:focus-visible, select:focus-visible {
+	border: 2px solid var(--primary);
+	outline: none;
+}
+
+.list {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	margin: 40px auto;
+}
+
+.list .list-header {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	column-gap: 20px;
+	padding: 10px;
+	border-bottom: 2px solid lightgray;
+}
+
+.list .list-header p {
+	color: var(--gray-darker);
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.list .list-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.list .list-content .list-item:empty {
+	border-bottom: none;
+}
+
+.list .list-content .list-item:last-child {
+	border-bottom: 2px solid lightgray;
+}
+
+.list .list-content .list-item {
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-auto-flow: column;
+	overflow-wrap: anywhere;
+	column-gap: 20px;
+	padding: 10px;
+	border-bottom: 1.5px solid lightgray;
+	border-top: none;
+	font-size: 14px;
+}
+
+.list .list-content .list-item:hover {
+	background-color: rgba(211, 211, 211, 0.5);
+}
+
+.list .list-footer {
+	padding: 10px;
+}
+
+.loading-text {
+	text-align: center;
+}
+
+.details {
+	margin: 40px 0;
+}
+
+.details .data-detail {
+	padding-bottom: 20px;
+}
+
+.details .data-detail h3 {
+	display: flex;
+	align-items: top;
+	gap: 20px;
+	font-size: 18px;
+}
+
+.details .data-detail h3 span {
+	font-weight: 500;
+	font-size: 20px;
+	color: var(--gray);
+}
+
+.delete-modal {
+	display: flex;
+	position: fixed;
+	top: 0;
+	left: 0;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+
+.delete-modal .dialog {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 600px;
+	padding: 20px;
+	background-color: var(--off-white);
+	border-radius: 10px;
+	box-shadow: 0px 0px 20px color-mix(in srgb, var(--gray) 30%, transparent);
+}
+
+.delete-modal .dialog h3 {
+	color: var(--gray-darker);
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.delete-modal .dialog hr {
+	height: 1px;
+	background-color: color-mix(in srgb, var(--gray) 20%, transparent);
+	border: none;
+}
+
+.delete-modal .dialog p {
+	margin: 10px 0;
+}
+
+.delete-modal .dialog .buttons {
+	justify-content: end;
+}
+
+.details .list {
+	margin: 0;
+}
+
+.lecturer-link {
+	color: var(--primary);
+	text-decoration: none;
+}
+
+.lecturer-link:hover {
+	color: var(--primary-darker);
+	text-decoration: underline;
+}
